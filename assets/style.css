@@ -1,0 +1,37 @@
+
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+h1 {
+    font-size: 4em;
+}
+#number {
+    font-size: 3em;
+    filter: blur(0.2em);
+    transition: 0.3s;
+}
+#message {
+    color: green;
+}
+.life-content{
+   position: absolute;
+   top: 30%;
+   left: 30%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+
+}
+.heart {
+    height: 2em;
+}
+.proposition {
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-around; */   
+}
+.proposition p {
+    margin-right: 1em;
+}
