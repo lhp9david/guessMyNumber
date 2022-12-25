@@ -35,3 +35,12 @@ h1 {
 .proposition p {
     margin-right: 1em;
 }
+
+@media (max-width: 768px){
+
+    .life-content{
+        position: static;
+        flex-direction: row;
+        margin: auto;
+    }
+}

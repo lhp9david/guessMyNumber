@@ -9,12 +9,7 @@ let input = document.querySelector('input');
 
 let vie = 6;
 
-
-
-let valider = document.querySelector('button');
-
-valider.addEventListener('click', ()=> {
-    
+function jouer(){
     if (input.value == randomNumber) {
 
         let message = document.querySelector('#message');
@@ -43,12 +38,8 @@ valider.addEventListener('click', ()=> {
         proposition.innerText = input.value ;
         document.querySelector('.proposition').appendChild(proposition);
     }
-    
-    input.value = ''
-    input.focus();
-    vie--
-    document.querySelector('.life-content').removeChild(document.querySelector('img'))
-    if(vie == 0){
+    if(vie == 1){
+       
         message.innerText = 'perdu'
         document.querySelector('.champs').style.display = 'none'
         number.style.filter = 'none'
@@ -58,38 +49,24 @@ valider.addEventListener('click', ()=> {
                     rejouer.addEventListener('click', ()=>{
                         window.location.reload();
                     })
-
     }
-})
-// window.addEventListener('keypress', e => {
-//     if ( e.key == 'Enter'){
-//         if (input.value == randomNumber.textContent) {
-
-//             let message = document.querySelector('#message');
-//             message.innerText = 'Bravo'
-//             randomNumber.style.filter = 'none'
-//             let rejouer = document.createElement('button');
-//             rejouer.innerText = 'rejouer';
-//             document.querySelector('.proposition').appendChild(rejouer)
-//             rejouer.addEventListener('click', ()=>{
-//                 window.location.reload();
-//             })
-            
-//         } else if (input.value < randomNumber.textContent){
-//             message.innerText = "c'est plus"
-//             let proposition = document.createElement('p');
-//             proposition.innerText = `${input.value}-`;
-//             document.querySelector('.proposition').appendChild(proposition)
     
-            
-//         } else if (input.value > randomNumber.textContent){
-//             message.innerText = "c'est moins"
-//             let proposition = document.createElement('p');
-//             proposition.innerText = input.value;
-//             document.querySelector('.proposition').appendChild(proposition)
-//         }
-//         input.value = ''
-        
-//     }
-// })
+    input.value = ''
+    input.focus();
+    vie--
+    console.log(vie)
+    document.querySelector('.life-content').removeChild(document.querySelector('img'))
 
+
+
+}
+
+let valider = document.querySelector('button');
+
+valider.addEventListener('click', jouer)
+
+window.addEventListener('keypress', e => {
+    if ( e.key == 'Enter'){
+        jouer();
+        console.log(vie)
+    }})
